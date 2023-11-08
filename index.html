@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="container">
+        <h1>Shopping Cart</h1>
+        <ul class="breadcrumb">
+            <li>Home</li>
+            <li>Shopping Cart</li>
+        </ul>
+        <div class="count">
+            <span id="count"></span>
+            items in the bag
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Product List -->
+    <section class="container">
+        <ul class="products"></ul>
+    </section>
+    <!-- End Product List -->
+
+    <!-- Summary -->
+    <section class="container" id="checkout">
+        <div class="promotion">
+            <label for="promo-code">Have A Promo Code?</label>
+            <input type="text" id="promo-code" />
+            <div class="ticket"><i class="fa-solid fa-ticket"></i></div>
+        </div>
+
+        <div class="summary">
+            <ul>
+                <li>Subtotal <span id="subtotal" class="subtotal"></span></li>
+                <li>Discount <span id="discount" class="discount">0</span></li>
+                <li class="total">Total<span id="total"></span></li>
+            </ul>
+        </div>
+
+        <div class="checkout">
+            <button type="button">Check Out</button>
+        </div>
+    </section>
+    <!-- End Summary -->
+
+    <div class="container info d-none">
+
+        <i class="fa-solid fa-battery-empty"></i>
+        <p class="title">Ooops.. your cart is empty.</p>
+        <a href="#">Shop New</a>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

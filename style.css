@@ -1,0 +1,322 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  transition: all 0.1s;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 20px 0;
+  padding: 0;
+  font-family: arial, sans-serif;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #16cc9b;
+  border: 2px solid #16cc9b;
+  color: #ffffff;
+  transition: all 0.25s linear;
+  cursor: pointer;
+}
+button::after {
+  position: relative;
+  right: 0;
+  content: " ❯";
+  transition: all 0.15s linear;
+}
+button:hover {
+  background-color: #f58551;
+  border-color: #f58551;
+}
+button:hover::after {
+  right: -5px;
+}
+button:focus {
+  outline: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+input {
+  transition: all 0.25s linear;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input {
+  outline: none;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+/* --- HEADER --- */
+header.container {
+  margin-bottom: 1.5rem;
+}
+header .breadcrumb {
+  color: #7d7d7d;
+}
+header .breadcrumb li {
+  float: left;
+  padding: 0 6px;
+  height: 20px;
+  line-height: 20px;
+}
+header .breadcrumb li:first-child {
+  padding-left: 2px;
+}
+header .breadcrumb li:not(:last-child)::after {
+  content: " ❯";
+  padding-left: 8px;
+}
+header .count {
+  float: right;
+  color: #333;
+  height: 20px;
+  line-height: 20px;
+  display: flex;
+}
+header .count #count {
+  width: 20px;
+  height: 20px;
+  border-radius: 50rem;
+  background-color: #333;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+/* --- PRODUCT LIST --- */
+.products {
+  border-top: 1px solid #eceef7;
+}
+.products .row {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eceef7;
+  display: flex;
+  align-items: center;
+}
+.products .row:hover {
+  color: #f58551;
+  cursor: pointer;
+}
+.products .row .col,
+.products .row .quantity,
+.products .row .remove {
+  float: left;
+}
+.products .row .col.left {
+  width: 70%;
+}
+.products .row .col.left .detail {
+  padding: 0 0.5rem;
+  line-height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 80px;
+}
+.products .row .col.left .detail .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+.products .row .col.left .detail .description {
+  color: #7d7d7d;
+  font-size: 1rem;
+}
+.products .row .col.left .detail .price {
+  font-size: 1.5rem;
+  color: #333;
+}
+.products .row .col.left .detail .price:after {
+  content: "₺";
+}
+.products .row .col.left .thumbnail {
+  float: left;
+}
+.products .row .col.left .thumbnail {
+  width: 25%;
+  height: 80px;
+  font-size: 2.5rem;
+  background-color: #eceef7;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+}
+.products .row .col.right {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.products .row .col.right .quantity,
+.products .row .col.right .remove {
+  width: 20px;
+  height: 100%;
+}
+.products .row .col.right .quantity > input {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: calc(50% - 30px);
+  background: #fff;
+  border: 2px solid #eceef7;
+  color: #333;
+  text-align: center;
+  font: 600 1.5rem Helvetica, Arial, sans-serif;
+  border-radius: 0.5rem;
+}
+.products .row .col.right .quantity > input:hover,
+.products .row .col.right .quantity > input:focus {
+  border-color: #f58551;
+}
+
+/* --- SUMMARY --- */
+.promotion {
+  position: relative;
+}
+.promotion > label {
+  float: left;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.promotion > input {
+  float: left;
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 1.8rem;
+  border: 2px dashed #16cc9b;
+  border-radius: 0.5rem;
+}
+.promotion .ticket {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  color: #16cc9b;
+  font-size: 1.5rem;
+}
+.promotion:hover > .ticket {
+  color: #f58551;
+}
+.promotion:hover > input {
+  border-color: #f58551;
+}
+.promotion:hover > button {
+  border-color: #f58551;
+  background-color: #f58551;
+}
+.promotion > button::after {
+  content: "❯";
+  font-size: 1rem;
+}
+
+.promotion,
+.summary,
+.checkout {
+  float: left;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.summary {
+  font-size: 1.2rem;
+  text-align: right;
+}
+.summary .subtotal::after {
+  content: "₺";
+}
+.summary .discount::after {
+  content: "%";
+}
+.summary ul li {
+  padding: 0.5rem 0;
+}
+.summary ul li span {
+  display: inline-block;
+  width: 20%;
+}
+.summary ul li.total {
+  font-weight: bold;
+}
+.summary ul li.total::after {
+  content: "₺";
+}
+
+.checkout {
+  text-align: right;
+}
+.checkout > button {
+  font-size: 1.2rem;
+  padding: 0.8rem 2.8rem;
+  border-radius: 0.5rem;
+}
+
+.empty-product {
+  text-align: center;
+}
+.empty-product > button {
+  font-size: 1.3rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.info {
+  text-align: center;
+  padding: 3rem;
+  height: 80vh;
+  margin-top: 25vh;
+}
+.info a {
+  color: #f58551;
+}
+.info .title {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.info i {
+  color: #f58551;
+  font-size: 2rem;
+}/*# sourceMappingURL=style.css.map */
